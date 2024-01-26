@@ -5,7 +5,7 @@ FROM node
 WORKDIR /app
 
 # Install git
-RUN apk add --no-cache git
+RUN apt-get update && apt-get install -y git
 
 # Clone the repository
 RUN git clone https://github.com/bateman/cors-anywhere.git .
