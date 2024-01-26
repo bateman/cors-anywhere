@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as the base image
-FROM node:21.10.0-alpine3.14
+FROM node
 
 # Set the working directory in the container to /app
 WORKDIR /app
