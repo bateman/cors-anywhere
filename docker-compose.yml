@@ -9,6 +9,7 @@ services:
     ports:
       - ${PORT}:${PORT}/tcp
     environment:
+      - PORT=${PORT}
       - PUID=1027
       - PGID=100
       - TZ=Europe/Rome
