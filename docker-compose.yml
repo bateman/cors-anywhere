@@ -1,6 +1,17 @@
-version: '3'
+version: '3.5'
 services:
-  app:
+  corsproxy:
+    container_name: corsproxy
+    network_mode: bridge
+    env_file:
+      - exports.env
     build: .
     ports:
-      - "${PORT}:${PORT}"
+      - ${PORT}:${PORT}/tcp
+    environment:
+      - PUID=1027
+      - PGID=100
+      - TZ=Europe/Rome
+    restart: unless-stopped
+    labels:       
+      - "com.centurylinklabs.watchtower.enable=false"
