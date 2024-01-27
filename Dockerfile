@@ -1,11 +1,11 @@
 # Use an official Node.js runtime as the base image
-FROM node
+FROM node:alpine
 
 # Set the working directory in the container to /app
 WORKDIR /app
 
 # Install git
-RUN apt-get update && apt-get install -y git
+RUN apk add --no-cache git
 
 # Clone the repository
 RUN git clone https://github.com/bateman/cors-anywhere.git .
