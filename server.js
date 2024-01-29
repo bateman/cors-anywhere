@@ -46,4 +46,7 @@ cors_proxy.createServer({
   },
 }).listen(port, host, function() {
   console.log('Running CORS Anywhere on ' + host + ':' + port);
+  console.log('Rate limit: ' + (process.env.CORSANYWHERE_RATELIMIT || 'Disabled'));
+  console.log('Blacklist: ' + originBlacklist);
+  console.log('Whitelist: ' + originWhitelist);
 });
