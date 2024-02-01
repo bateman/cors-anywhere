@@ -5,7 +5,7 @@ FROM node:alpine
 WORKDIR /app
 
 # Install git
-RUN apk add --no-cache git~=2.39
+RUN apk add --no-cache git~=2.43.0-r0
 
 # Clone the repository and install any needed packages specified in package.json
 RUN git clone https://github.com/bateman/cors-anywhere.git . \
