@@ -5,10 +5,12 @@ FROM node:alpine
 WORKDIR /app
 
 # Install git
-RUN apk add --no-cache git
+RUN apk add --no-cache git=2.43.0
 
 # Clone the repository
-RUN git clone https://github.com/bateman/cors-anywhere.git .
+RUN git clone https://github.com/bateman/cors-anywhere.git . \
+    && npm install \
+    && node server.js
 
 # Install any needed packages specified in package.json
 RUN npm install
